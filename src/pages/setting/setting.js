@@ -1,10 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import './mine.styl'
+import './setting.styl'
 
 export default class Index extends Component {
 	config = {
-		navigationBarTitleText: '我的'
+		navigationBarTitleText: '设置'
 	}
 	constructor() {
 		super(...arguments)
