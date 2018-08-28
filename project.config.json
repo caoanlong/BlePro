@@ -1,0 +1,15 @@
+{
+	"miniprogramRoot": "./dist",
+	"projectname": "Ble",
+	"description": "蓝牙测试小程序，基于taroUI",
+	"appid": "wx6d8a92e6b3c016e4",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"condition": {}
+}
