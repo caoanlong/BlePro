@@ -1,20 +1,26 @@
 import Taro, { Component } from '@tarojs/taro'
 import './index.styl'
-import { 
-	View, 
-	Canvas,
-	Map,
-	Image 
-} from '@tarojs/components'
+import { View, Image } from '@tarojs/components'
 import { 
 	AtList, 
 	AtListItem, 
 	AtIcon,
 	AtRadio
 } from "taro-ui"
-import createWxCharts from '../../utils/createWxCharts'
+import sys from '../../utils/getSystemInfo'
+import Run from '../../components/Run'
+import Ride from '../../components/Ride'
+import Climb from '../../components/Climb'
+import PlayBall from '../../components/PlayBall'
+import Yoga from '../../components/Yoga'
 import { startConnect } from '../../utils/connectBle'
-
+import createWxCharts from '../../utils/createWxCharts'
+import { hms } from '../../utils/transTime'
+const canvasStyle = {
+    width: '100%',
+    height: (sys.windowWidth * 2/3) + 'px',
+    backgroundColor: '#fff'
+}
 export default class Index extends Component {
 	config = {
 		navigationBarTitleText: '运动'
@@ -22,9 +28,6 @@ export default class Index extends Component {
 	constructor() {
 		super(...arguments)
 		this.state = {
-			wxCharts: null,
-			windowWidth: 0,
-			windowHeight: 0,
 			isRunning: false,
 			selected: '跑步',
 			tipsText: '正在跑步...',
@@ -36,20 +39,29 @@ export default class Index extends Component {
 				{ value: '瑜伽', label: '瑜伽' }
 			]
 		}
-		this.mapCtx = null
+		this.wxCharts = null
+		this.wxChartsOpt = {
+			windowWidth: sys.windowWidth,
+			categories: [],
+			bloodOxygen: [20, 70, 60, 110, 120, 105, 70, 10, 40, 20, 90],
+			heartRate: [50, 30, 100, 50, 30, 90, 125, 80, 100, 40, 60]
+		}
 	}
 	componentWillMount () { }
 	componentDidMount () {
-		try {
-			const res = wx.getSystemInfoSync()    //试图获取屏幕宽高数据
-			this.setState({
-				windowWidth: res.windowWidth,
-				windowHeight: res.windowHeight
-			})
-		} catch (e) {
-			console.error('getSystemInfoSync failed!')   //如果获取失败
-		}
 		// startConnect()
+		const categories = []
+		const bloodOxygen = []
+		const heartRate = []
+		for (let i = 0; i < 20; i++) {
+			categories.unshift(hms(new Date(Date.now() - i * 5000)))
+			bloodOxygen.unshift(parseInt(Math.random()*100))
+			heartRate.unshift(parseInt(Math.random()*100))
+		}
+		this.wxChartsOpt.categories = categories
+		this.wxChartsOpt.bloodOxygen = bloodOxygen
+		this.wxChartsOpt.heartRate = heartRate
+		this.wxCharts = createWxCharts(this.wxChartsOpt)
 	}
 	componentWillUnmount () { }
 	componentDidShow () { }
@@ -60,24 +72,33 @@ export default class Index extends Component {
 		})
 	}
 	handleChange(selected) {
+		// this.wxCharts = null
 		this.setState({ 
 			selected,
 			tipsText: `正在${selected}...`
 		})
+		// if (this.state.selected == '打球' || this.state.selected == '瑜伽') {
+		// 	this.wxCharts = createWxCharts(this.wxChartsOpt)
+		// }
 	}
 	handleSport(isRunning) {
-		if (isRunning) {
-			this.setState({isRunning: false})
-			this.mapCtx = null
-		} else {
-			this.setState({isRunning: true})
-			this.mapCtx = wx.createMapContext('myMap')
-			this.mapCtx.moveToLocation()
-		}
+		this.setState({isRunning: !isRunning})
 	}
 	render () {
+		const sportType = null
+		if (this.state.selected == '跑步') {
+			sportType = (<Run/>)
+		} else if (this.state.selected == '骑行') {
+			sportType = (<Ride/>)
+		} else if (this.state.selected == '爬山') {
+			sportType = (<Climb/>)
+		} else if (this.state.selected == '打球') {
+			sportType = (<View><Canvas canvas-id="canvas" disable-scroll="true" style={canvasStyle}></Canvas><PlayBall/></View>)
+		} else if (this.state.selected == '瑜伽') {
+			sportType = (<View><Canvas canvas-id="canvas" disable-scroll="true" style={canvasStyle}></Canvas><Yoga/></View>)
+		}
 		return (
-			<View className='container' style={{height: this.state.windowHeight+'px'}}>
+			<View className='container' style={{height: sys.windowHeight+'px'}}>
 				<View className='head-top'>
 					<View className="head-avatar">
 						<Image className="avatar" src="http://storage.360buyimg.com/mtd/home/32443566_635798770100444_2113947400891531264_n1533825816008.jpg"></Image>
@@ -92,11 +113,7 @@ export default class Index extends Component {
 				</View>
 				{
 					this.state.isRunning 
-					? <View>
-						{/* <View className='tips-text'>{tipsText}</View> */}
-						<Map id="myMap" className='map' show-location />
-						{/* <Canvas canvas-id="canvas" disable-scroll="true" className='canvas'></Canvas> */}
-					</View>
+					? sportType
 					: <View>
 						<AtList>
 							<AtListItem title='历史数据' arrow='right' onClick={this.handleClick.bind(this, 'history')} />

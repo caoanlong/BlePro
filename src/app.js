@@ -8,6 +8,7 @@ if (process.env.TARO_ENV === "weapp") {
 }
 
 import './app.styl'
+import './utils/getSystemInfo'
 
 class App extends Component {
 	config = {
