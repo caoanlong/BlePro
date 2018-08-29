@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 
 import { View } from '@tarojs/components'
 import sys from '../utils/getSystemInfo'
+import { hms2 } from '../utils/transTime'
 
 const height = sys.windowWidth * 0.2
 const numInfoStyle = {
@@ -41,13 +42,6 @@ export default class PlayBall extends Component {
         this.timer = null
     }
     componentDidShow () { }
-    transTime(time) {
-        let h = '00',m = '00', s = '00'
-        h = time < 3600 ? '00' : (parseInt(time/3600) < 10 ? ('0' + parseInt(time/3600)) : parseInt(time/3600))
-        m = time%3600 < 60 ? '00' : (parseInt(time%3600/60) < 10 ? ('0' + parseInt(time%3600/60)) : parseInt(time%3600/60))
-        s = time%60 < 10 ? ('0' + time%60) : time%60
-        return h + ':' + m + ':' + s
-    }
     render () {
         return (
             <View>
@@ -62,7 +56,7 @@ export default class PlayBall extends Component {
                             <View style={{fontSize:'12px',color: '#999'}}>步数</View>
                         </View>
                         <View style={itemStyle}>
-                            <View style={{fontSize:'28px',fontWeight:'bold',color: '#333'}}>{this.transTime(this.state.time)}</View>
+                            <View style={{fontSize:'28px',fontWeight:'bold',color: '#333'}}>{hms2(this.state.time)}</View>
                             <View style={{fontSize:'12px',color: '#999'}}>时间</View>
                         </View>
                     </View>

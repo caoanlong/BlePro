@@ -1,12 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import './index.styl'
 import { View, Image } from '@tarojs/components'
-import { 
-	AtList, 
-	AtListItem, 
-	AtIcon,
-	AtRadio
-} from "taro-ui"
+import { AtList, AtListItem, AtIcon,AtRadio } from "taro-ui"
 import sys from '../../utils/getSystemInfo'
 import Run from '../../components/Run'
 import Ride from '../../components/Ride'
@@ -50,18 +45,7 @@ export default class Index extends Component {
 	componentWillMount () { }
 	componentDidMount () {
 		// startConnect()
-		const categories = []
-		const bloodOxygen = []
-		const heartRate = []
-		for (let i = 0; i < 20; i++) {
-			categories.unshift(hms(new Date(Date.now() - i * 5000)))
-			bloodOxygen.unshift(parseInt(Math.random()*100))
-			heartRate.unshift(parseInt(Math.random()*100))
-		}
-		this.wxChartsOpt.categories = categories
-		this.wxChartsOpt.bloodOxygen = bloodOxygen
-		this.wxChartsOpt.heartRate = heartRate
-		this.wxCharts = createWxCharts(this.wxChartsOpt)
+		this.handCreateWxCharts()
 	}
 	componentWillUnmount () { }
 	componentDidShow () { }
@@ -84,7 +68,22 @@ export default class Index extends Component {
 	handleSport(isRunning) {
 		this.setState({isRunning: !isRunning})
 	}
+	handCreateWxCharts() {
+		const categories = []
+		const bloodOxygen = []
+		const heartRate = []
+		for (let i = 0; i < 20; i++) {
+			categories.unshift(hms(new Date(Date.now() - i * 5000)))
+			bloodOxygen.unshift(parseInt(Math.random()*100))
+			heartRate.unshift(parseInt(Math.random()*100))
+		}
+		this.wxChartsOpt.categories = categories
+		this.wxChartsOpt.bloodOxygen = bloodOxygen
+		this.wxChartsOpt.heartRate = heartRate
+		this.wxCharts = createWxCharts(this.wxChartsOpt)
+	}
 	render () {
+		this.wxCharts = null
 		const sportType = null
 		if (this.state.selected == '跑步') {
 			sportType = (<Run/>)
@@ -93,8 +92,10 @@ export default class Index extends Component {
 		} else if (this.state.selected == '爬山') {
 			sportType = (<Climb/>)
 		} else if (this.state.selected == '打球') {
+			this.handCreateWxCharts()
 			sportType = (<View><Canvas canvas-id="canvas" disable-scroll="true" style={canvasStyle}></Canvas><PlayBall/></View>)
 		} else if (this.state.selected == '瑜伽') {
+			this.handCreateWxCharts()
 			sportType = (<View><Canvas canvas-id="canvas" disable-scroll="true" style={canvasStyle}></Canvas><Yoga/></View>)
 		}
 		return (
