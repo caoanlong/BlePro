@@ -22,7 +22,7 @@ export default class Index extends Component {
 	}
 	constructor() {
 		super(...arguments)
-		this.state = {
+		this.state = {  
 			isRunning: false,
 			selected: '跑步',
 			tipsText: '正在跑步...',
@@ -44,7 +44,7 @@ export default class Index extends Component {
 	}
 	componentWillMount () { }
 	componentDidMount () {
-		startConnect()
+		// startConnect()
 		this.handCreateWxCharts()
 	}
 	componentWillUnmount () { }

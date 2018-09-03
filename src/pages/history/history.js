@@ -1,14 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './history.styl'
-import sys from '../../utils/getSystemInfo'
-import createWxCharts from '../../utils/createWxCharts'
-const canvasStyle = {
-    width: '100%',
-    height: (sys.windowWidth * 2/3) + 'px',
-    padding: '20px 0',
-    backgroundColor: '#fff'
-}
+// import sys from '../../utils/getSystemInfo'
 export default class Index extends Component {
 	config = {
 		navigationBarTitleText: '历史'
@@ -26,7 +19,7 @@ export default class Index extends Component {
 	render () {
 		return (
 			<View className='container'>
-				<Canvas canvas-id="canvas" disable-scroll="true" style={canvasStyle}></Canvas>
+				
 			</View>
         )
     }
