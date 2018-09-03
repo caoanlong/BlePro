@@ -15,6 +15,7 @@ class App extends Component {
 		pages: [
 			'pages/index/index',
 			'pages/history/history',
+			'pages/historyInfo/historyInfo',
 			'pages/report/report',
 			'pages/setting/setting'
 		],

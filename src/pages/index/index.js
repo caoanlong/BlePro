@@ -84,7 +84,7 @@ export default class Index extends Component {
 	}
 	render () {
 		this.wxCharts = null
-		const sportType = null
+		let sportType = null
 		if (this.state.selected == '跑步') {
 			sportType = (<Run/>)
 		} else if (this.state.selected == '骑行') {

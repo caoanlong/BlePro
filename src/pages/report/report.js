@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import './report.styl'
+import sys from '../../utils/getSystemInfo'
 import Record from '../../components/Record'
 
 export default class Index extends Component {
@@ -31,7 +32,7 @@ export default class Index extends Component {
 	componentDidHide () { }
 	render () {
 		return (
-			<View className='container'>
+			<View className='container' style={{height: sys.windowHeight+'px'}}>
 				{this.state.records.map((item, i) => <Record record={item} key={i}/>)}
 			</View>
         )

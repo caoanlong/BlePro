@@ -4,7 +4,7 @@ import pdfPNG from '../assets/imgs/pdf.png'
 const record = {
     display: 'flex',
     backgroundColor: '#fff',
-    marginBottom: '10px'
+    borderBottom: '1px solid #e5e5e5'
 }
 const left = {
     flex: '0 0 50px',
