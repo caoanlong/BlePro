@@ -213,6 +213,14 @@ function onBLECharacteristicValueChange() {
     wx.onBLECharacteristicValueChange(res => {
         console.log(`characteristic ${res.characteristicId} has changed, now is ${res.value}`)
         console.log(ab2hex(res.value))
+        wx.showToast({
+            title: ab2hex(res.value),
+            duration: 2000
+        })
+        // setTimeout(() => {
+        //     wx.hideToast()
+        // }, 1000)
+
     })
 }
 // 停止蓝牙搜索
