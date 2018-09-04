@@ -96,6 +96,13 @@
   version "0.7.0"
   resolved "http://registry.npm.taobao.org/@sindresorhus/is/download/@sindresorhus/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@tarojs/async-await@^1.0.0-beta.18":
+  version "1.0.0-beta.23"
+  resolved "http://registry.npm.taobao.org/@tarojs/async-await/download/@tarojs/async-await-1.0.0-beta.23.tgz#f7a66352533eaac42798fbd505adbc636a1e91b2"
+  dependencies:
+    promise-polyfill "^7.1.2"
+    regenerator-runtime "^0.11.1"
+
 "@tarojs/cli@^1.0.0-beta.18":
   version "1.0.0-beta.18"
   resolved "http://registry.npm.taobao.org/@tarojs/cli/download/@tarojs/cli-1.0.0-beta.18.tgz#32cafb1109f4e06f3fad29baf0e1e7f25af541eb"
@@ -134,6 +141,16 @@
     vinyl "^2.1.0"
     vinyl-fs "^3.0.2"
 
+"@tarojs/components@1.0.0-beta.21":
+  version "1.0.0-beta.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/components/download/@tarojs/components-1.0.0-beta.21.tgz#4d70fd6026aa032dd08551bd0932fbda66545d72"
+  dependencies:
+    classnames "^2.2.5"
+    nervjs "^1.3.0"
+    omit.js "^1.0.0"
+    react "16.3.0"
+    weui "^1.1.2"
+
 "@tarojs/components@^1.0.0-beta.18":
   version "1.0.0-beta.18"
   resolved "http://registry.npm.taobao.org/@tarojs/components/download/@tarojs/components-1.0.0-beta.18.tgz#ed56c3c5a95fdd4efc2d2fe123e406dc03b771ff"
@@ -156,6 +173,12 @@
   dependencies:
     csso "^3.5.0"
 
+"@tarojs/plugin-sass@^1.0.0-beta.18":
+  version "1.0.0-beta.23"
+  resolved "http://registry.npm.taobao.org/@tarojs/plugin-sass/download/@tarojs/plugin-sass-1.0.0-beta.23.tgz#3418f1a01d298890b45782b1d8cc5e287afafead"
+  dependencies:
+    node-sass "^4.8.3"
+
 "@tarojs/plugin-stylus@^1.0.0-beta.18":
   version "1.0.0-beta.18"
   resolved "http://registry.npm.taobao.org/@tarojs/plugin-stylus/download/@tarojs/plugin-stylus-1.0.0-beta.18.tgz#5582396cfd5631af1cef90c1e44f330fc42bdfc2"
@@ -167,6 +190,12 @@
   resolved "http://registry.npm.taobao.org/@tarojs/plugin-uglifyjs/download/@tarojs/plugin-uglifyjs-1.0.0-beta.18.tgz#4b245631ae9de4334703431ae1f378064c261c00"
   dependencies:
     uglify-js "^3.3.24"
+
+"@tarojs/router@1.0.0-beta.21":
+  version "1.0.0-beta.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/router/download/@tarojs/router-1.0.0-beta.21.tgz#19e0b6026bda4c1ae001e22057b723d8bf970693"
+  dependencies:
+    "@tarojs/taro-h5" "1.0.0-beta.21"
 
 "@tarojs/router@^1.0.0-beta.18":
   version "1.0.0-beta.18"
@@ -183,6 +212,24 @@
     mobile-detect "^1.4.2"
     whatwg-fetch "^2.0.4"
 
+"@tarojs/taro-h5@1.0.0-beta.21":
+  version "1.0.0-beta.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/taro-h5/download/@tarojs/taro-h5-1.0.0-beta.21.tgz#7aea70d22bb7d065e9b57464c86829e7a746eb5f"
+  dependencies:
+    "@tarojs/taro" "1.0.0-beta.21"
+    jsonp-retry "^1.0.3"
+    mobile-detect "^1.4.2"
+    whatwg-fetch "^2.0.4"
+
+"@tarojs/taro-weapp@1.0.0-beta.21":
+  version "1.0.0-beta.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/taro-weapp/download/@tarojs/taro-weapp-1.0.0-beta.21.tgz#3f8bf8e2b06a12954dcde624ccfec587dcd6a0b7"
+  dependencies:
+    "@tarojs/taro" "1.0.0-beta.21"
+    "@tarojs/utils" "1.0.0-beta.21"
+    lodash "^4.17.10"
+    prop-types "^15.6.1"
+
 "@tarojs/taro-weapp@^1.0.0-beta.18":
   version "1.0.0-beta.18"
   resolved "http://registry.npm.taobao.org/@tarojs/taro-weapp/download/@tarojs/taro-weapp-1.0.0-beta.18.tgz#20582a9ff1f46156673247ceae8804f74785596c"
@@ -195,6 +242,10 @@
 "@tarojs/taro@1.0.0-beta.18", "@tarojs/taro@^1.0.0-beta.18":
   version "1.0.0-beta.18"
   resolved "http://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-1.0.0-beta.18.tgz#e83d1896f90fd7c0b34145b45980c131497958c7"
+
+"@tarojs/taro@1.0.0-beta.21":
+  version "1.0.0-beta.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-1.0.0-beta.21.tgz#d379e52bb3374f5e47f149ae6e2401c4f375f0df"
 
 "@tarojs/transformer-wx@1.0.0-beta.18":
   version "1.0.0-beta.18"
@@ -215,6 +266,10 @@
 "@tarojs/utils@1.0.0-beta.18":
   version "1.0.0-beta.18"
   resolved "http://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-1.0.0-beta.18.tgz#ee5ebee8786987c2319862c883a0a898f034259b"
+
+"@tarojs/utils@1.0.0-beta.21":
+  version "1.0.0-beta.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-1.0.0-beta.21.tgz#c543900df90cb53726b55dc697307e0dae49c56e"
 
 "@tarojs/webpack-runner@^1.0.0-beta.18":
   version "1.0.0-beta.18"
@@ -4465,6 +4520,13 @@ neo-async@^2.5.0:
   version "2.5.2"
   resolved "http://registry.npm.taobao.org/neo-async/download/neo-async-2.5.2.tgz#489105ce7bc54e709d736b195f82135048c50fcc"
 
+nerv-server@^1.3.2:
+  version "1.3.2"
+  resolved "http://registry.npm.taobao.org/nerv-server/download/nerv-server-1.3.2.tgz#edf6e6087cafa4f67e964f4fc0909f3132b773e6"
+  dependencies:
+    nerv-shared "1.3.2"
+    nerv-utils "1.3.2-beta.0"
+
 nerv-shared@1.3.2:
   version "1.3.2"
   resolved "http://registry.npm.taobao.org/nerv-shared/download/nerv-shared-1.3.2.tgz#a389c2dcce35940577009e9da9ab63b5ffb06a61"
@@ -5198,6 +5260,10 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/promise-inflight/download/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
 
+promise-polyfill@^7.1.2:
+  version "7.1.2"
+  resolved "http://registry.npm.taobao.org/promise-polyfill/download/promise-polyfill-7.1.2.tgz#ab05301d8c28536301622d69227632269a70ca3b"
+
 promise@^7.1.1:
   version "7.3.1"
   resolved "http://registry.npm.taobao.org/promise/download/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
@@ -5416,7 +5482,7 @@ regenerate@^1.2.1:
   version "1.4.0"
   resolved "http://registry.npm.taobao.org/regenerate/download/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
 
-regenerator-runtime@^0.11.0:
+regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
   version "0.11.1"
   resolved "http://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
@@ -6309,6 +6375,20 @@ tar@^4:
     mkdirp "^0.5.0"
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
+
+taro-ui@^1.0.1:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/taro-ui/download/taro-ui-1.1.1.tgz#fa66ee607909e7403d2c7e18b59ad39fadf26ca5"
+  dependencies:
+    "@tarojs/components" "1.0.0-beta.21"
+    "@tarojs/router" "1.0.0-beta.21"
+    "@tarojs/taro" "1.0.0-beta.21"
+    "@tarojs/taro-h5" "1.0.0-beta.21"
+    "@tarojs/taro-weapp" "1.0.0-beta.21"
+    lodash "^4.17.10"
+    nerv-server "^1.3.2"
+    nervjs "^1.3.0"
+    prop-types "^15.6.2"
 
 text-table@~0.2.0:
   version "0.2.0"
