@@ -8,8 +8,26 @@ export default class HistoryInfo extends Component {
     }
     constructor() {
         super(...arguments)
+        this.state = {
+            type: null
+        }
+    }
+    componentDidMount() {
+        this.setState({ type: this.$scope.options.type })
     }
     render() {
+        let renderType = null
+        if (this.state.type == 'run') {
+            console.log('run')
+        } else if (this.state.type == 'ride') {
+            console.log('ride')
+        } else if (this.state.type == 'climb') {
+            console.log('climb')
+        } else if (this.state.type == 'playball') {
+            console.log('playball')
+        } else if (this.state.type == 'yoga') {
+            console.log('yoga')
+        }
         return (
             <View className='container'>
                 

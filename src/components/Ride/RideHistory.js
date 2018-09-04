@@ -40,10 +40,10 @@ const arrow = {
 }
 const style = { wrap, date, info, distance, unit, time, arrow }
 
-export default class RunHistory extends Component {
+export default class RideHistory extends Component {
     handleClick(page) {
 		Taro.navigateTo({
-			url: `/pages/${page}/${page}`
+			url: `/pages/${page}/${page}?type=ride`
 		})
 	}
     render () {

@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 
 import { View } from '@tarojs/components'
-import sys from '../utils/getSystemInfo'
-import { hms2 } from '../utils/transTime'
+import sys from '../../utils/getSystemInfo'
+import { hms2 } from '../../utils/transTime'
 
 const height = sys.windowWidth * 0.44
 const numInfoStyle = {

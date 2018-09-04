@@ -2,58 +2,13 @@ import Taro, { Component } from '@tarojs/taro'
 import { AtTabs, AtTabsPane} from 'taro-ui'
 import './history.styl'
 import sys from '../../utils/getSystemInfo'
-import RunHistory from '../../components/RunHistory'
-import RideHistory from '../../components/RideHistory'
-import PlayBallHistory from '../../components/PlayBallHistory'
-import ClimbHistory from '../../components/ClimbHistory'
-import YogaHistory from '../../components/YogaHistory'
-const run = [
-	{
-		date: '2018/07/22 22:12',
-		distance:'20.19',
-		time: '03:11:45'
-	},{
-		date: '2018/07/08 17:58',
-		distance:'5.26',
-		time: '00:32:28'
-	}
-]
-const ride = [
-	{
-		date: '2018/07/22 22:12',
-		distance:'20.19',
-		time: '03:11:45'
-	}
-]
-const climb = [
-	{
-		date: '2018/07/22 22:12',
-		distance:'20.19',
-		time: '03:11:45'
-	}
-]
-const playBall = [
-	{
-		date: '2018/07/22 22:12',
-		heartRate:'115',
-		time: '03:11:45'
-	},{
-		date: '2018/07/08 17:58',
-		heartRate:'135',
-		time: '00:32:28'
-	}
-]
-const yoga = [
-	{
-		date: '2018/07/22 22:12',
-		heartRate:'96',
-		time: '03:11:45'
-	},{
-		date: '2018/07/08 17:58',
-		heartRate:'85',
-		time: '00:32:28'
-	}
-]
+import RunHistory from '../../components/Run/RunHistory'
+import RideHistory from '../../components/Ride/RideHistory'
+import PlayBallHistory from '../../components/PlayBall/PlayBallHistory'
+import ClimbHistory from '../../components/Climb/ClimbHistory'
+import YogaHistory from '../../components/Yoga/YogaHistory'
+import { run, ride, climb, playBall, yoga } from '../../assets/data/history'
+
 export default class History extends Component {
 	config = {
 		navigationBarTitleText: '历史'

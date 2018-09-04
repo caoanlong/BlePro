@@ -40,10 +40,10 @@ const arrow = {
 }
 const style = { wrap, date, info, distance, unit, time, arrow }
 
-export default class ClimbHistory extends Component {
+export default class PlayBallHistory extends Component {
     handleClick(page) {
 		Taro.navigateTo({
-			url: `/pages/${page}/${page}`
+			url: `/pages/${page}/${page}?type=climb`
 		})
 	}
     render () {
@@ -51,8 +51,8 @@ export default class ClimbHistory extends Component {
             <View style={style.wrap} onClick={this.handleClick.bind(this, 'historyInfo')}>
                 <View style={style.date}>{this.props.history.date}</View>
                 <View style={style.info}>
-                    <View style={style.distance}>{this.props.history.distance}</View>
-                    <View style={style.unit}>KM</View>
+                    <View style={style.distance}>{this.props.history.heartRate}</View>
+                    <View style={style.unit}>心率</View>
                     <View style={style.time}>{this.props.history.time}</View>
                 </View>
                 <View style={style.arrow}></View>

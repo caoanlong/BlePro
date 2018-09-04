@@ -40,10 +40,10 @@ const arrow = {
 }
 const style = { wrap, date, info, distance, unit, time, arrow }
 
-export default class PlayBallHistory extends Component {
+export default class YogaHistory extends Component {
     handleClick(page) {
 		Taro.navigateTo({
-			url: `/pages/${page}/${page}`
+			url: `/pages/${page}/${page}?type=yoga`
 		})
 	}
     render () {
