@@ -32,7 +32,7 @@ const txtS = {
 }
 const style = { content, row, itemL, itemR, txtH, txtS }
 
-export default class RideHistoryInfo extends Component {
+export default class RunHistoryInfo extends Component {
     constructor() {
         super(...arguments)
         this.state = {
@@ -55,19 +55,23 @@ export default class RideHistoryInfo extends Component {
                 <MyMap refresh={this.refresh()}></MyMap>
                 <View style={style.content}>
                     <View style={style.row}>
-                        <View style={style.itemR}>
+                        <View style={style.itemL}>
                             <View style={style.txtH}>4.30 KM</View>
                             <View style={style.txtS}>总里程</View>
-                        </View>
-                    </View>
-                    <View style={style.row}>
-                        <View style={style.itemL}>
-                            <View style={style.txtH}>6'24"</View>
-                            <View style={style.txtS}>配速：分钟/公里</View>
                         </View>
                         <View style={style.itemR}>
                             <View style={style.txtH}>00:27:35</View>
                             <View style={style.txtS}>总计时间</View>
+                        </View>
+                    </View>
+                    <View style={style.row}>
+                        <View style={style.itemL}>
+                            <View style={style.txtH}>125</View>
+                            <View style={style.txtS}>高度：米</View>
+                        </View>
+                        <View style={style.itemR}>
+                            <View style={style.txtH}>4605</View>
+                            <View style={style.txtS}>总步数：步</View>
                         </View>
                     </View>
                 </View>

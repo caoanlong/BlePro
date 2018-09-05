@@ -1,9 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
 import './historyInfo.styl'
-import MyMap from '../../components/MyMap'
-import createWxCharts from '../../utils/createWxCharts'
+import sys from '../../utils/getSystemInfo'
 import RunHistoryInfo from '../../components/Run/RunHistoryInfo'
 import RideHistoryInfo from '../../components/Ride/RideHistoryInfo'
+import ClimbHistoryInfo from '../../components/Climb/ClimbHistoryInfo'
+import PlayBallHistoryInfo from '../../components/PlayBall/PlayBallHistoryInfo'
 export default class HistoryInfo extends Component {
     config = {
 		navigationBarTitleText: '历史详情'
@@ -20,21 +21,19 @@ export default class HistoryInfo extends Component {
     render() {
         let renderType = null
         if (this.state.type == 'run') {
-            console.log('run')
             renderType = (<RunHistoryInfo/>)
         } else if (this.state.type == 'ride') {
-            console.log('ride')
             renderType = (<RideHistoryInfo/>)
         } else if (this.state.type == 'climb') {
-            console.log('climb')
-        } else if (this.state.type == 'playball') {
-            console.log('playball')
+            renderType = (<ClimbHistoryInfo/>)
+        } else if (this.state.type == 'playBall') {
+            renderType = (<PlayBallHistoryInfo/>)
         } else if (this.state.type == 'yoga') {
             console.log('yoga')
         }
         return (
-            <View className='container'>
-                
+            <View className='container' style={{height: sys.windowHeight+'px'}}>
+                {renderType}
             </View>
         )
     }

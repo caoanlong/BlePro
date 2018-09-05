@@ -70,10 +70,6 @@ export default class Ride extends Component {
                             <View style={{fontSize:'12px',color: '#999'}}>配速</View>
                         </View>
                         <View style={itemStyle}>
-                            <View style={{fontSize:'26px',fontWeight:'bold',color: '#333'}}>{this.state.speed}</View>
-                            <View style={{fontSize:'12px',color: '#999'}}>步数</View>
-                        </View>
-                        <View style={itemStyle}>
                             <View style={{fontSize:'26px',fontWeight:'bold',color: '#333'}}>{hms2(this.state.time)}</View>
                             <View style={{fontSize:'12px',color: '#999'}}>时间</View>
                         </View>
