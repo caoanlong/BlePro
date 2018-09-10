@@ -44,7 +44,7 @@ export default class Index extends Component {
 	}
 	componentWillMount () { }
 	componentDidMount () {
-		// startConnect()
+		startConnect()
 		this.handCreateWxCharts()
 	}
 	componentWillUnmount () { }

@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
+import { AtList, AtListItem } from "taro-ui"
 import './setting.styl'
 
 export default class Index extends Component {
@@ -17,7 +18,15 @@ export default class Index extends Component {
 	componentDidHide () { }
 	render () {
 		return (
-			<View className='container'></View>
+			<View className='container'>
+				<AtList>
+					<AtListItem title='姓名' arrow='right' extraText='易烊千玺'/>
+					<AtListItem title='手机' arrow='right' extraText='13049497395'/>
+				</AtList>
+				<View style={{padding: '0 20px', marginTop: '20px'}}>
+					<Button>退出</Button>
+				</View>
+			</View>
         )
     }
 }
